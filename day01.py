@@ -12,6 +12,7 @@ C = (F - 32) / 1.8
 # 输出摄氏温度
 print("C = %f" % C)
 
+
 """
     practice02
     输入圆的半径计算计算周长和面积
@@ -40,9 +41,49 @@ year = int(input("year = "))
 #   普通年能被4整除且不能被100整除的为闰年
 #   世纪年能被400整除的是闰年
 res = ''
-if(year % 4 == 0 and year % 100 != 0 or year % 400 == 0):
+if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
     res = '是闰年'
 else:
     res = '不是闰年'
 # 输出结果
 print(res)
+
+
+"""
+    practice04
+    分段函数求值:
+		    3x - 5	(x > 1)
+    f(x) =	x + 2	(-1 <= x <= 1)
+		    5x + 3	(x < -1)
+    author：liucong
+    date：2021-01-04
+"""
+x = float(input('x = '))
+if x > 1:
+    fx = 3 * x -5
+elif x >= -1:
+    fx = x + 2
+else:
+    fx = 5 * x + 3
+print(fx)
+
+
+"""
+    practice05
+    百分制成绩转换为等级制成绩:
+    要求：如果输入的成绩在90分以上（含90分）输出A；80分-90分（不含90分）输出B；
+    70分-80分（不含80分）输出C；60分-70分（不含70分）输出D；60分以下输出E。
+    author：liucong
+    date：2021-01-04
+"""
+score = float(input('score = '))
+if score >= 90:
+    print('A')
+elif score >= 80:
+    print('B')
+elif score >= 70:
+    print('C')
+elif score >= 60:
+    print('D')
+else:
+    print('E')
