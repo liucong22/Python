@@ -22,22 +22,22 @@ print(sum)
     author：liucong
     date：2021-01-05
 """
-# import random
-# res = random.randint(1, 100)
-# cnt = 0
-# while True:
-#     # 每次进入循环，次数+=1
-#     cnt += 1
-#     # 玩家输入数字
-#     num = int(input("请输入整数："))
-#     if num > res:
-#         print("小一点")
-#     elif num < res:
-#         print("大一点")
-#     else:
-#         print("猜对了")
-#         break
-# print("共猜了%d次" % cnt)
+import random
+res = random.randint(1, 100)
+cnt = 0
+while True:
+    # 每次进入循环，次数+=1
+    cnt += 1
+    # 玩家输入数字
+    num = int(input("请输入整数："))
+    if num > res:
+        print("小一点")
+    elif num < res:
+        print("大一点")
+    else:
+        print("猜对了")
+        break
+print("共猜了%d次" % cnt)
 
 
 """
@@ -57,28 +57,28 @@ for i in range(1, 10):
     author：liucong
     date：2021-01-05
 """
-# num = 0
-# while True:
-#     # 输入一个正数，判断输入
-#     is_prime = True
-#     num = int(input("请输入一个正数:"))
-#     if num <= 0:
-#         print("请重新输入！")
-#         continue
-#     # 循环判断，其是否能被非1，非自身的数整除
-#     for i in range(2, num + 1):
-#         if num % i == 0:
-#             is_prime = False
-#             break
-#         else:
-#             break
-#     break
+num = 0
+while True:
+    # 输入一个正数，判断输入
+    is_prime = True
+    num = int(input("请输入一个正数:"))
+    if num <= 0:
+        print("请重新输入！")
+        continue
+    # 循环判断，其是否能被非1，非自身的数整除
+    for i in range(2, num + 1):
+        if num % i == 0:
+            is_prime = False
+            break
+        else:
+            break
+    break
 
-# # 输出结果
-# if is_prime and num != 1:
-#     print("%d是素数" % num)
-# else:
-#     print("%d不是素数" % num)
+# 输出结果
+if is_prime and num != 1:
+    print("%d是素数" % num)
+else:
+    print("%d不是素数" % num)
 
 """
     practice05
@@ -86,5 +86,45 @@ for i in range(1, 10):
     author：liucong
     date：2021-01-05
 """
+# 输入两个正整数
+x = int(input("x = "))
+y = int(input("y = "))
+# 比较两个数的大小, 若x > y, 则交换 x, y 的值
+if x > y:
+    x , y = y , x
+for i in range(x, 0, -1):
+    if x % i == 0 and y % i == 0:
+        print("%d和%d的最大公因数是%d" % (x, y, i))
+        print("%d和%d的最小公倍数是%d" % (x, y, x * y // i))
+        break
+
+"""
+    practice06
+    打印三角形图案
+    author：liucong
+    date：2021-01-05
+"""
+row = int(input("row = "))
+for i in range(row):
+    for j in range(i + 1):
+        print("*", end = ' ')
+    print()
+
+for i in range(row):
+    for j in range(row):
+        if j < row - i - 1:
+            print(' ', end = ' ')
+        else:
+            print('*', end = ' ')
+    print()
+
+for i in range(row):
+    for j in range(row - i - 1):
+        print(' ', end = ' ')
+    for j in range(2 * i + 1):
+        print('*', end = ' ')
+    print()
+
+
 
 
