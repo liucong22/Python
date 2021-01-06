@@ -1,23 +1,53 @@
 """
     practice01
-    生成斐波那契数列的前20个数：
-    斐波那契数列的特点是数列的前两个数都是1，从第三个数开始，每个数都是它前面两个数的和，形如：1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
-    author：liucong
+    计算C(M,N) = M!/N!(M-N)!
+    author:liucong
+    wersion:0.1
     date：2021-01-07
 """
+m = int(input('m = '))
+n = int(input('n = '))
+# 分别算m的阶乘，n的阶乘，（m-n）的阶乘
+fm = 1
+for i in range(1, m + 1):
+    fm *= i
+fn = 1
+for j in range(1, n + 1):
+    fn *= j
+fm_n = 1
+for k in range(1, m - n + 1):
+    fm_n *= k
+print("C(m,n) = %d" % (fm // fn // fm_n))
 
 """
-    practice02
-    找出10000以内的完美数：
-    它的所有的真因子（即除了自身以外的因子）的和（即因子函数）恰好等于它本身；例如：6（$6=1+2+3$）和28（$28=1+2+4+7+14$）就是完美数
+    practice01
+    计算C(M,N) = M!/N!(M-N)!
+    author:liucong
+    wersion:0.2
     date：2021-01-07
 """
+# 自己封装函数
+def fac(num):
+    # 求阶乘
+    res = 1
+    for i in range(1, num + 1):
+        res *= i
+    return res
+
+m = int(input('m = '))
+n = int(input('n = '))
+print("C(m,n) = %d" % (fac(m) // fac(n) // fac(m-n)))
 
 """
-    practice03
-    输出100以内所有的素数：
-    素数指的是只能被1和自身整除的正整数（不包括1）
+    practice01
+    计算C(M,N) = M!/N!(M-N)!
+    author:liucong
+    wersion:0.3
     date：2021-01-07
 """
-
+# 使用现有函数
+import math
+m = int(input('m = '))
+n = int(input('n = '))
+print("C(m,n) = %d" % (math.factorial(m) // math.factorial(n) // math.factorial(m-n)))
 
