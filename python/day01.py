@@ -87,7 +87,3 @@ elif score >= 60:
     print('D')
 else:
     print('E')
-
-"""
-liucong01
-"""
