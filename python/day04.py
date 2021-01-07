@@ -51,3 +51,47 @@ m = int(input('m = '))
 n = int(input('n = '))
 print("C(m,n) = %d" % (math.factorial(m) // math.factorial(n) // math.factorial(m-n)))
 
+"""
+    practice02
+    python对函数参数的处理
+    author:liucong
+    version:0.1
+    date：2021-01-07
+"""
+from random import randint
+# 掷骰子
+def roll_dice(n = 2):
+    total = 0
+    for _ in range(n):
+        total += randint(1, 6)
+    return total
+
+# 三个数相加
+def add(a = 0, b = 0, c = 0):
+    return a + b + c
+
+print(roll_dice())
+print(roll_dice(3))
+print(add())
+print(add(1))
+print(add(1, 2))
+print(add(1, 3, 3))
+print(add(b = 100, c = 2, a = 5))
+
+# 传参是由调用者决定的，如果是非必传参数，可以使用可变参数
+# 在参数名前面的*表示args是一个可变参数
+def add(*args):
+    total = 0
+    for val in args:
+        total += val
+    return total
+
+# 在调用add函数时可以传入0个或多个参数
+print(add())
+print(add(1))
+print(add(1, 2))
+print(add(1, 2, 3))
+print(add(1, 3, 5, 7, 9))
+
+
+
