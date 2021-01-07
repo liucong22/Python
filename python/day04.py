@@ -93,5 +93,69 @@ print(add(1, 2))
 print(add(1, 2, 3))
 print(add(1, 3, 5, 7, 9))
 
+"""
+    practice03
+    实现计算求最大公约数和最小公倍数的函数
+    author:liucong
+    version:0.1
+    date：2021-01-07
+"""
+def gcd(x, y):
+    # 求最大公因数
+    if x > y:
+        x, y = y, x
+    for res in (x, 0, -1):
+        if x % res == 0 and y % res == 0:
+            return res
+
+def lcm(x, y):
+    # 求最小公倍数
+    return x * y // gcd(x, y)
+
+
+"""
+    practice04
+    实现判断一个数是不是回文数的函数:12421, 对称数
+    author:liucong
+    version:0.1
+    date：2021-01-07
+"""
+def is_palindrome(num):
+    # 判断一个数是不是回文数
+    temp = num
+    total = 0
+    while temp > 0:
+        total = total * 10 + temp % 10
+        temp //= 10
+    return total == num
+
+"""
+    practice05
+    实现判断一个数是不是素数的函数
+    author:liucong
+    version:0.1
+    date：2021-01-07
+"""
+def is_prime(num):
+    # 判断一个数是不是素数
+    for factor in range(2, int(num ** 0.5) + 1):
+        if num % factor == 0:
+            return False
+    return True if num != 1 else False
+
+"""
+    practice06
+    写一个程序判断输入的正整数是不是回文素数
+    author:liucong
+    version:0.1
+    date：2021-01-07
+"""
+if __name__ == '__main__':
+    num = int(input('请输入正整数: '))
+    if is_palindrome(num) and is_prime(num):
+        print('%d是回文素数' % num)
+
+
+
 
 
